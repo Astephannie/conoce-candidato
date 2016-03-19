@@ -1,7 +1,8 @@
 <header class="bg-success m-0 bg-green" style="padding: 8px;">
-	<h3 class="text-center txt-white">Conoce tu candidato</h3>
+	<h3 class="text-center txt-white">¿Conoces a tu candidato?</h3>
 </header>
 <section >
+	<div class="loader" ng-show="showSpinner"></div>
 	<div class="list-group" ng-repeat="candidate in candidates">
 		<div class="list-group-item" style="min-height:70px" ng-cloak>
 			<div class="col-xs-3">

@@ -7,7 +7,9 @@
 </header>
 <section>
 	<h2>¿Sabías que?</h2>
-	<p class="sabias-que">{{ current_statement.info }}</p>
+	<div class="loader" ng-show="showSpinner"></div>
+	<p class="sabias-que" style="margin: 8% 2%; font-size: 20px">{{ current_statement.info }}</p>
+	<p class="text-center text-primary" style="font-size: 9px;">(Fuente: {{ current_statement.source }})</p>
 </section>
 <footer class="enterate text-center" style="position: fixed; bottom: 0;">
 	<div class="btn-group btn-group-justified" role="group" aria-label="...">
@@ -18,7 +20,7 @@
 	    <button type="button" class="btn btn-default" style="background-color: #f4a62a !important" ng-click="addCounter(2)">No lo sabía</button>
 	  </div>
 	  <div class="btn-group" role="group">
-	    <button type="button" class="btn btn-default" style="background-color: #C0392B !important; color:#fff" ng-click="addCounter(3)">No me importa</button>
+	    <button type="button" class="btn btn-default" style="background-color: #C0392B !important; color:#fff" ng-click="addCounter(3)">No opino</button>
 	  </div>
 	</div>
 </footer>

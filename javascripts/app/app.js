@@ -5,10 +5,9 @@ jne.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'templates/home.html',
-                controller: 'CandidateController',
-                controllerAs: 'candidateCtrl'
-            })
+                templateUrl: '/templates/intro.html',
+                controller: 'IntroController',
+                controllerAs: 'intro'            })
             .when('/sabias-que/:candidateId', {
                 templateUrl: '/templates/sabias-que.html',
                 controller: 'KnowWhatController',
@@ -18,6 +17,11 @@ jne.config(['$routeProvider', '$locationProvider',
                 templateUrl: '/templates/reporte.html',
                 controller: 'ResultController',
                 controllerAs: 'result'
+            })
+            .when('/home', {
+                templateUrl: 'templates/home.html',
+                controller: 'CandidateController',
+                controllerAs: 'candidateCtrl'
             })
             .otherwise({
                 redirecTo: '/'
