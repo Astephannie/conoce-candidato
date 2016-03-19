@@ -1,0 +1,1 @@
+var jne = angular.module('jne', []);

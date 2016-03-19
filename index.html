@@ -1,206 +1,49 @@
 <!DOCTYPE>
-<html>
+<html ng-app="jne">
 	<head>
-		<title>Catalogo Triathlon</title>
+		<title>Conoce tu candidato</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 	</head>
 	<body>
-		<nav class="navbar navbar-default">
-		  <div class="container-fluid">
-		    <!-- Brand and toggle get grouped for better mobile display -->
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-      		<a class="navbar-brand" href="index.html"><img alt="Brand" src="assets\images\logo.jpg"></a>
-		    </div>
-		    <!-- Collect the nav links, forms, and other content for toggling -->
-		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="index.html">INICIO</a></li>
-		        <li><a href="nosotros.html">NOSOTROS</a></li>
-		        <li><a href="visor.html">CATÁLOGO VIRTUAL</a></li>
-		        <li><a href="intranet.html">INTRANET</a></li>
-		        <li><a href="contacto.html">CONTACTO</a></li>
-		      </ul>
-		    </div><!-- /.navbar-collapse -->
-		  </div><!-- /.container-fluid -->
-		</nav>
-		<section id="#banner">
-			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-			  <!-- Indicators -->
-			  <ol class="carousel-indicators">
-			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-			    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-			  </ol>
-			  <!-- Wrapper for slides -->
-			  <div class="carousel-inner" role="listbox">
-			    <div class="item active">
-			      <img src="assets\images\banner1.jpg" alt="catalogo-triathlon" style="width:100%">
-			    </div>
-			    <div class="item">
-			      <img src="assets\images\banner2.jpg" alt="catalogo-triathlon" style="width:100%">
-			    </div>
-			    <div class="item">
-			      <img src="assets\images\banner3.jpg" alt="catalogo-triathlon" style="width:100%">
-			    </div>
-			  </div>
+		<header class="bg-success m-0 bg-green" style="padding: 8px;">
+			<h3 class="text-center txt-white">Conoce tu candidato</h3>
+		</header>
+		<section ng-controller="CandidateController" >
+			<div class="list-group" ng-repeat="candidate in candidates" ng-cloak>
+				<a href="#" class="list-group-item" style="min-height:70px" ng-cloak>
+					<div class="col-xs-3">
+						<img ng-src="{{ candidate.image }}" class="w-100" alt="{{ candidate.name }}" ng-cloak>
+					</div>
+					<div class="col-xs-7 p-0">
+						<h5 class="list-group-item-heading" ng-cloak>{{ candidate.name }}</h5>
+						<p class="list-group-item-text fs-10" ng-cloak>{{ candidate.organization }}</p>
+					</div>
+					<div class="col-xs-2">
+						<input type="checkbox" name="option" value="si">
+					</div>
+				</a>
+				<!--<a href="#" class="list-group-item" style="min-height:65px">-->
+				<!--	<div class="col-xs-3">-->
+				<!--		<img src="assets/images/user.png" style="width: 100%;">-->
+				<!--	</div>-->
+				<!--	<div class="col-xs-7 p-0">-->
+				<!--		<h4 class="list-group-item-heading">Keiko Fujimori</h4>-->
+				<!--		<p class="list-group-item-text">Fuerza Popular</p>-->
+				<!--	</div>-->
+				<!--	<div class="col-xs-2">-->
+				<!--		<input type="checkbox" name="option" value="si">-->
+				<!--	</div>-->
+				<!--</a>-->
 			</div>
 		</section>
-		<!--<section id="#catalogo">-->
-		<!--	<div class="seccion">-->
-		<!--		<div class="columnas">-->
-		<!--			<div class="row">-->
-		<!--				<div class="col-md-4 col-md-offset-2">-->
-		<!--					<a href="contacto.html#tusdatos"><button class="btn btn-afi" style="width:100%">AFILIARSE</button></a>-->
-		<!--				</div>-->
-		<!--				<div class="col-md-4">-->
-		<!--					<a href="intranet.html"><button class="btn btn-ped" style="width:100%">INTRANET</button></a>-->
-		<!--				</div>-->
-		<!--			</div>-->
-		<!--		</div>-->
-		<!--	</div>-->
-		<!--</section>	-->
-		<section id="#beneficios" style="background-color:#F1ECF2">
-			<div class="seccion">
-				<h2 class="text-center">BENEFICIOS</h2>
-				<div class="columnas">
-					<div class="row" style="margin-top:20px;">
-						<div class="col-md-3">
-							<div class="text-center">
-								<img src="assets\icons\ico1.png" style="width:20%" alt="Catálogo deportivo Triathlon">
-								<p style="padding-top:20px;">Ingresos ilimitados.</p>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="text-center">
-								<img src="assets\icons\ico2.png" style="width:20%" alt="Catálogo deportivo Triathlon">
-								<p style="padding-top:20px;">Margen mínimo de ganancia del 20% en adelante a partir de un producto</p>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="text-center">
-								<img src="assets\icons\ico3.png" style="width:20%" alt="Catálogo deportivo Triathlon">
-								<p style="padding-top:20px;">Bono de descuento por volumen de compra.</p>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="text-center">
-								<img src="assets\icons\ico4.png" style="width:20%" alt="Catálogo deportivo Triathlon">
-								<p style="padding-top:20px;">Eres tu propio jefe.</p>
-							</div>
-						</div>
-					</div>
-					<div class="row" style="margin-top:20px;">
-						<div class="col-md-3">
-							<div class="text-center">
-								<img src="assets\icons\ben1.png" style="width:20%" alt="Catálogo deportivo Triathlon">
-								<p style="padding-top:20px;">Manejo  de tus tiempos.</p>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="text-center">
-								<img src="assets\icons\premio.png" style="width:20%" alt="Catálogo deportivo Triathlon">
-								<p style="padding-top:20px;">Tienes una nueva campaña cada 45 días.</p>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="text-center">
-								<img src="assets\icons\ico7.png" style="width:20%" alt="Catálogo deportivo Triathlon">
-								<p style="padding-top:20px;">Puedes realizar tus pedidos desde cualquier lugar.</p>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="text-center">
-								<img src="assets\icons\ico8.png" style="width:20%" alt="Catálogo deportivo Triathlon">
-								<p style="padding-top:20px;">Te llevamos tu pedido a casa.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="#mismarcas">
-			<div class="seccion">
-				<div class="row" style="padding: 20px 100px 10px">
-					<div class="col-md-2">
-						<div class="catalogo text-center">
-							<img src="assets\icons\marca1.png" alt="Catálogo deportivo Triathlon Reebook" style="width: 100%;">
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="catalogo text-center">
-							<img src="assets\icons\marca2.jpg" alt="Catálogo deportivo Triathlon Puma" style="width: 100%;">
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="catalogo text-center">
-							<img src="assets\icons\marca3.png" alt="Catálogo deportivo Triathlon Adidas" style="width: 100%;">
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="catalogo text-center">
-							<img src="assets\icons\marca4.png" alt="Catálogo deportivo Triathlon Nike" style="width: 100%;">
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="catalogo text-center">
-							<img src="assets\icons\marca5.jpg" alt="Catálogo deportivo Triathlon Vans" style="width: 100%;">
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="catalogo text-center">
-							<img src="assets\icons\marca13.jpg" alt="Catálogo deportivo Triathlon HushPuppies" style="width: 70%;">
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<footer class="footer">
-			<div class="row">
-				<div class="col-xs-1">
-					<img src="assets\icons\fb.png" alt="Catálogo deportivo Triathlon Facebook" style="top:-3px; right:20px">
-				</div>
-				<div class="col-md-10" style="text-align: center;">
-					Triathlon Catálogos Deportivos | Todos los derechos reservados | 2016
-				</div>
-			</div>
-			<div class="btn-afiliate">
-				<a href="contacto.html#tusdatos"><button class="btn btn-ped" style="position: fixed; bottom: 3px; right: 60px;">¡AFÍLIATE!</button></a>
-			</div>
+		<footer class="enterate text-center">
+			<button class="btn btn-default bg-green-dark" type="submit">¡ENTÉRATE!</button>
 		</footer>
-		
-		<!-- Modal -->
-		<div class="modal fade" id="modalImage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <!--<h4 class="modal-title" id="myModalLabel">Modal title</h4>-->
-		      </div>
-		      <div class="modal-body">
-		       	<img src="assets/images/popup.jpg" class="img-responsive" alt="Responsive image">
-		      </div>
-		    </div>
-		  </div>
-		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<!-- Javascripts de Bootstrap -->
-		<script src="javascripts/b3/collapse.js"></script>
-		<script src="javascripts/b3/transition.js"></script>
-		<script src="javascripts/b3/carousel.js"></script>
-		<script src="javascripts/b3/modal.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$("#modalImage").modal('show');
-			})
-		</script>
+		<script type="text/javascript" src="javascripts/angular.min.js"></script>
+		<script type="text/javascript" src="javascripts/app/app.js"></script>
+		<script type="text/javascript" src="javascripts/app/controllers/candidate_controller.js"></script>
 	</body>	
 </html>	
