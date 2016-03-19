@@ -12,7 +12,7 @@
 			<h3 class="text-center txt-white">Conoce tu candidato</h3>
 		</header>
 		<section ng-controller="CandidateController" >
-			<div class="list-group" ng-repeat="candidate in candidates" ng-cloak>
+			<div class="list-group" ng-repeat="candidate in candidates">
 				<a href="#" class="list-group-item" style="min-height:70px" ng-cloak>
 					<div class="col-xs-3">
 						<img ng-src="{{ candidate.image }}" class="w-100" alt="{{ candidate.name }}" ng-cloak>
@@ -22,25 +22,13 @@
 						<p class="list-group-item-text fs-10" ng-cloak>{{ candidate.organization }}</p>
 					</div>
 					<div class="col-xs-2">
-						<input type="checkbox" name="option" value="si">
+						<input type="checkbox" name="option" ng-model="candidate.selected" ng-true-value="true" ng-false-value="false" >
 					</div>
 				</a>
-				<!--<a href="#" class="list-group-item" style="min-height:65px">-->
-				<!--	<div class="col-xs-3">-->
-				<!--		<img src="assets/images/user.png" style="width: 100%;">-->
-				<!--	</div>-->
-				<!--	<div class="col-xs-7 p-0">-->
-				<!--		<h4 class="list-group-item-heading">Keiko Fujimori</h4>-->
-				<!--		<p class="list-group-item-text">Fuerza Popular</p>-->
-				<!--	</div>-->
-				<!--	<div class="col-xs-2">-->
-				<!--		<input type="checkbox" name="option" value="si">-->
-				<!--	</div>-->
-				<!--</a>-->
 			</div>
 		</section>
-		<footer class="enterate text-center">
-			<button class="btn btn-default bg-green-dark" type="submit">¡ENTÉRATE!</button>
+		<footer class="enterate text-center" ng-controller="CandidateInfoController">
+			<button class="btn btn-default bg-green-dark" type="button" ng-click="get_noticed()">¡ENTÉRATE!</button>
 		</footer>
 		<script type="text/javascript" src="javascripts/angular.min.js"></script>
 		<script type="text/javascript" src="javascripts/app/app.js"></script>
