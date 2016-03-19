@@ -1,0 +1,24 @@
+<header style="padding: 6%;">
+	<div class="progress m-0">
+	  <div class="progress-bar" role="progressbar" aria-valuenow="{{ count }}" aria-valuemin="0" aria-valuemax="{{ total }}" style="width: {{ count / total * 100 }}%;">
+	    <span class="sr-only">{{ count / total * 100 }}% Complete</span>
+	  </div>
+	</div>
+</header>
+<section>
+	<h2>¿Sabías que?</h2>
+	<p class="sabias-que">{{ current_statement.info }}</p>
+</section>
+<footer class="enterate text-center" style="position: fixed; bottom: 0;">
+	<div class="btn-group btn-group-justified" role="group" aria-label="...">
+	  <div class="btn-group" role="group">
+	    <button type="button" class="btn btn-default" style="background-color: #3498DB !important; color:#fff" ng-click="addCounter(1)">Lo sabía</button>
+	  </div>
+	  <div class="btn-group" role="group">
+	    <button type="button" class="btn btn-default" style="background-color: #f4a62a !important" ng-click="addCounter(2)">No lo sabía</button>
+	  </div>
+	  <div class="btn-group" role="group">
+	    <button type="button" class="btn btn-default" style="background-color: #C0392B !important; color:#fff" ng-click="addCounter(3)">No me importa</button>
+	  </div>
+	</div>
+</footer>

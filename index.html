@@ -1,5 +1,5 @@
 <!DOCTYPE>
-<html ng-app="jne">
+<html>
 	<head>
 		<title>Conoce tu candidato</title>
 		<meta charset="utf-8">
@@ -7,30 +7,10 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 	</head>
-	<body>
-		<header class="bg-success m-0 bg-green" style="padding: 8px;">
-			<h3 class="text-center txt-white">Conoce tu candidato</h3>
-		</header>
-		<section ng-controller="CandidateController" >
-			<div class="list-group" ng-repeat="candidate in candidates">
-				<a href="#" class="list-group-item" style="min-height:70px" ng-cloak>
-					<div class="col-xs-3">
-						<img ng-src="{{ candidate.image }}" class="w-100" alt="{{ candidate.name }}" ng-cloak>
-					</div>
-					<div class="col-xs-7 p-0">
-						<h5 class="list-group-item-heading" ng-cloak>{{ candidate.name }}</h5>
-						<p class="list-group-item-text fs-10" ng-cloak>{{ candidate.organization }}</p>
-					</div>
-					<div class="col-xs-2">
-						<input type="checkbox" name="option" ng-model="candidate.selected" ng-true-value="true" ng-false-value="false" >
-					</div>
-				</a>
-			</div>
-		</section>
-		<footer class="enterate text-center" ng-controller="CandidateInfoController">
-			<button class="btn btn-default bg-green-dark" type="button" ng-click="get_noticed()">¡ENTÉRATE!</button>
-		</footer>
-		<script type="text/javascript" src="javascripts/angular.min.js"></script>
+	<body ng-app="jne">
+		<div ng-view></div>
+		<script type="text/javascript" src="javascripts/vendor/angular.js"></script>
+		<script type="text/javascript" src="javascripts/vendor/angular-route.js"></script>
 		<script type="text/javascript" src="javascripts/app/app.js"></script>
 		<script type="text/javascript" src="javascripts/app/controllers/candidate_controller.js"></script>
 	</body>	
