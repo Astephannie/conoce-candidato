@@ -1,10 +1,31 @@
 <header class="bg-success m-0 bg-blue" style="padding: 8px;">
-	<h3 class="text-center txt-white">Lo conoces ...</h3>
+	<h3 class="text-center txt-white" style="font-size: 1em">Al parecer no conoces ni el nombre del partido ...</h3>
 </header>
-<section>
-	<h2 style="border-radius: 50%; border: 1px solid #000; width: 50%; padding: 20%">80%</h2>
-	<p class="sabias-que">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..</p>
+<div class="container text-center" style="padding-top: 5%">
+	<img src="{{ candidate.image }}" alt="{{ candidate.name }}">
+</div>
+<h4 class="text-center">{{ candidate.name }}</h4>
+<section style="padding: 5%;">
+	<p class="text-center">LO CONOCE</p>
+	<div class="progress">
+	  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="{{ know }}" aria-valuemin="0" aria-valuemax="{{ total }}" style="width: {{ know/total * 100 }}%">
+	    {{ know/total * 100 }}%
+	  </div>
+	</div>
+	<p class="text-center">NO LO CONOCE</p>
+	<div class="progress">
+	  <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="{{ dontknow }}" aria-valuemin="0" aria-valuemax="{{ total }}" style="width: {{ dontknow/total * 100 }}%">
+	    {{ dontknow/total * 100 }}%
+	  </div>
+	</div>
+	<p class="text-center">NO ES DE INTERÉS</p>
+	<div class="progress">
+	  <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="{{ dontmatter }}" aria-valuemin="0" aria-valuemax="{{ total }}" style="width: {{ dontmatter/total * 100 }}%">
+	    {{ dontmatter/total * 100 }}%
+	  </div>
+	</div>
+	<!--<p class="sabias-que">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..</p>-->
 </section>
 <footer class="enterate text-center">
-	<a href="index.html"><button class="btn btn-default bg-green-dark" type="submit">CONOCER OTRO CANDIDATO</button></a>
+	<a href="/"><button class="btn btn-default bg-green-dark" type="button">CONOCER OTRO CANDIDATO</button></a>
 </footer>

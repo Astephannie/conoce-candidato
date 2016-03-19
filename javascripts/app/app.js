@@ -14,8 +14,10 @@ jne.config(['$routeProvider', '$locationProvider',
                 controller: 'KnowWhatController',
                 controllerAs: 'knowwhat'
             })
-            .when('/resultado', {
-                templateUrl: '/templates/reporte.html'
+            .when('/resultado/:candidateId/:total/:dontknow/:know/:dontmatter', {
+                templateUrl: '/templates/reporte.html',
+                controller: 'ResultController',
+                controllerAs: 'result'
             })
             .otherwise({
                 redirecTo: '/'

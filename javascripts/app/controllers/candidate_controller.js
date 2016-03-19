@@ -50,7 +50,9 @@ jne.controller('KnowWhatController', ['$scope', '$routeParams', '$http', '$locat
             }
             $scope.count++;
             if ($scope.total == $scope.count) {
-                $location.path('/resultado');
+                $location.path('/resultado/' + $scope.candidate_id + '/' 
+                    + $scope.total + '/' + $scope.dont_know_count + '/' + 
+                    $scope.know_count + '/' + $scope.dont_matter);
             }
             setCurrentStatement();
         }
@@ -74,3 +76,20 @@ jne.controller('KnowWhatController', ['$scope', '$routeParams', '$http', '$locat
         }
     }
 ])
+
+jne.controller('ResultController', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
+    $scope.candidate_id = $routeParams.candidateId;
+    $scope.total = $routeParams.total;
+    $scope.dontknow = $routeParams.dontknow;
+    $scope.know = $routeParams.know;
+    $scope.dontmatter = $routeParams.dontmatter;
+    
+    $http.get('http://jne-api.herokuapp.com/api/v1/candidates/' + $scope.candidate_id)
+    .then(
+        function(response) {
+            $scope.candidate = response.data.candidate;    
+        }, function(error) {
+            console.log(error);
+        }
+    )
+}])
